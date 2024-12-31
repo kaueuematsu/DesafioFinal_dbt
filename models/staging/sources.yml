@@ -1,0 +1,32 @@
+version: 2
+
+sources:
+  - name: sap_adw
+    description: Data originating from the seeds sent to Snowflake.
+    database: DESAFIO_LH
+    schema: "SAP_ADW"
+    tables:
+      - name: salesorderheader
+        description: "This model contains sales data"
+      - name: salesorderdetail
+        description: "This model contains details of sales data"
+      - name: specialofferproduct
+        description: "This model contains special offer products data"
+      - name: specialoffer
+        description: "This model contains special offer data"
+      - name: customer
+        description: "This model contains customer data."
+      - name: currency
+        description: "This model contains currency data."
+      - name: currencyrate
+        description: "This model contains currency rate data."
+      - name: salesterritory
+        description: "This model contains sales territory data."
+      - name: stateprovince
+        description: "This model contains territory data."
+      - name: countryregion
+        description: "This model contains other territory data."
+      - name: salestaxrate
+        description: "This model contains regional tax data."
+
+      
