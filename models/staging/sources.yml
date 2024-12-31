@@ -10,6 +10,10 @@ sources:
         description: "This model contains sales data"
       - name: salesorderdetail
         description: "This model contains details of sales data"
+      - name: salesorderheadersalesreason
+        description: "This model contains sales reason data"
+      - name: salesreason
+        description: "This model contains sales reason data"
       - name: specialofferproduct
         description: "This model contains special offer products data"
       - name: specialoffer
@@ -20,6 +24,8 @@ sources:
         description: "This model contains currency data."
       - name: currencyrate
         description: "This model contains currency rate data."
+      - name: address
+        description: "This model contains address data."
       - name: salesterritory
         description: "This model contains sales territory data."
       - name: stateprovince
@@ -28,5 +34,17 @@ sources:
         description: "This model contains other territory data."
       - name: salestaxrate
         description: "This model contains regional tax data."
+      - name: product
+        description: "This model contains product data."
+      - name: productsubcategory
+        description: "This model contains product subcategory data."
+      - name: productcategory
+        description: "This model contains product category data."
+      - name: creditcard
+        description: "This model contains credit card data."
+      - name: personcreditcard
+        description: "This model contains person credit card data."
+      - name: person
+        description: "This model contains persons data."
 
       
