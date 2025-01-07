@@ -1,12 +1,10 @@
-{{ config(materialized='table') }}
-
-with 
+with
     currency as (
-        SELECT
-            currencycode as currency_code
+        select
+            cast(currencycode as varchar) as pk_currency_code
             , name as name
             , cast(modifieddate as datetime) as modified_date
-        FROM {{ source('sap_adw', 'currency') }}
+        from {{ source('sap_adw', 'currency') }}
     )
 
 select *

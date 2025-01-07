@@ -1,9 +1,7 @@
-{{ config(materialized='table') }}
-
-with 
+with
     salesorderheader as (
-        SELECT
-            salesorderid as sales_order_id
+        select
+            cast(salesorderid as int) as fk_sales_order
             , revisionnumber as revision_number
             , cast(orderdate as datetime) as order_date
             , cast(duedate as datetime) as due_date
@@ -12,15 +10,15 @@ with
             , onlineorderflag as online_order_flag
             , purchaseordernumber as purchase_order_number
             , accountnumber as account_number
-            , customerid as customer_id
-            , salespersonid as sales_person_id
-            , territoryid as territory_id
-            , billtoaddressid as bill_to_address_id
-            , shiptoaddressid as ship_to_address_id
-            , shipmethodid as ship_method_id
-            , creditcardid as credit_card_id
+            , cast(customerid as int) as fk_customer
+            , cast(salespersonid as int) as fk_sales_person
+            , cast(territoryid as int) as fk_territory
+            , cast(billtoaddressid as int) as fk_bill_to_address
+            , cast(shiptoaddressid as int) as fk_ship_to_address
+            , cast(shipmethodid as int) as fk_ship_method
+            , cast(creditcardid as int) as fk_credit_card
             , creditcardapprovalcode as credit_card_approval_code
-            , currencyrateid as currency_rate_id
+            , cast(currencyrateid as int) as fk_currency_rate
             , subtotal as subtotal
             , taxamt as tax_amt
             , freight as freight
@@ -28,7 +26,7 @@ with
             , comment as comment
             , rowguid as rowgu_id
             , cast(modifieddate as datetime) as modified_date
-        FROM {{ source('sap_adw', 'salesorderheader') }}
+        from {{ source('sap_adw', 'salesorderheader') }}
     )
 
 select *

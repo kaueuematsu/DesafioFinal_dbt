@@ -1,9 +1,7 @@
-{{ config(materialized='table') }}
-
-with 
+with
     salesterritory as (
-        SELECT
-            territoryid as territory_id
+        select
+            cast(territoryid as int) as pk_territory
             , name as name
             , countryregioncode as country_region_code
             , group_ as "group"
@@ -13,7 +11,7 @@ with
             , costlastyear as cost_last_year
             , rowguid as rowgu_id
             , cast(modifieddate as datetime) as modified_date
-        FROM {{ source('sap_adw', 'salesterritory') }}
+        from {{ source('sap_adw', 'salesterritory') }}
     )
 
 select *

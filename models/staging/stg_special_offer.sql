@@ -1,9 +1,7 @@
-{{ config(materialized='table') }}
-
-with 
+with
     specialoffer as (
-        SELECT
-            specialofferid as special_offer_id
+        select
+            cast(specialofferid as int) as pk_special_offer
             , description as description
             , discountpct as discount_pct
             , type as type
@@ -14,7 +12,7 @@ with
             , maxqty as max_qty
             , rowguid as rowgu_id
             , cast(modifieddate as datetime) as modified_date
-        FROM {{ source('sap_adw', 'specialoffer') }}
+        from {{ source('sap_adw', 'specialoffer') }}
     )
 
 select *

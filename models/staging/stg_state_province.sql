@@ -1,17 +1,15 @@
-{{ config(materialized='table') }}
-
 with 
     stateprovince as (
-        SELECT
-            stateprovinceid as state_province_id
+        select
+            cast(stateprovinceid as int) as pk_state_province
             , stateprovincecode as state_province_code
-            , countryregioncode as country_region_code
+            , cast(countryregioncode as varchar) as fk_country_region_code
             , isonlystateprovinceflag as is_only_state_province_flag
             , name as name
-            , territoryid as territory_id
+            , cast(territoryid as varchar) as fk_territory
             , rowguid as rowgu_id
             , cast(modifieddate as datetime) as modified_date
-        FROM {{ source('sap_adw', 'stateprovince') }}
+        from {{ source('sap_adw', 'stateprovince') }}
     )
 
 select *

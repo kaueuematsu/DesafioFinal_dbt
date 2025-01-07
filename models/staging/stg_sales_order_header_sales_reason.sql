@@ -1,12 +1,10 @@
-{{ config(materialized='table') }}
-
-with 
+with
     salesorderheadersalesreason as (
-        SELECT
-            salesorderid as sales_order_id
-            , salesreasonid as sales_reason_id
+        select
+            cast(salesorderid as int) as fk_sales_order
+            , cast(salesreasonid as int) as fk_sales_reason
             , cast(modifieddate as datetime) as modified_date
-        FROM {{ source('sap_adw', 'salesorderheadersalesreason') }}
+        from {{ source('sap_adw', 'salesorderheadersalesreason') }}
     )
 
 select *

@@ -1,14 +1,12 @@
-{{ config(materialized='table') }}
-
-with 
+with
     productsubcategory as (
-        SELECT
-            productsubcategoryid as product_subcategory_id
-            , productcategoryid as product_category_id
+        select
+            cast(productsubcategoryid as int) as pk_product_subcategory
+            , cast(productcategoryid as int) as fk_product_category
             , name as name
             , rowguid as rowgu_id
             , cast(modifieddate as datetime) as modified_date
-        FROM {{ source('sap_adw', 'productsubcategory') }}
+        from {{ source('sap_adw', 'productsubcategory') }}
     )
 
 select *

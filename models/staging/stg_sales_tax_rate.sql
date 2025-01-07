@@ -1,10 +1,8 @@
-{{ config(materialized='table') }}
-
 with 
     salestaxrate as (
-        SELECT
-            salestaxrateid as sales_tax_rate_id
-            , stateprovinceid as state_province_id
+        select
+            cast(salestaxrateid as int) as pk_sales_tax_rate
+            , cast(stateprovinceid as int) as fk_state_province
             , taxtype as tax_type
             , taxrate as tax_rate
             , name as name

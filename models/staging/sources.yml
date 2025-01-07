@@ -46,5 +46,11 @@ sources:
         description: "This model contains person credit card data."
       - name: person
         description: "This model contains persons data."
+      - name: store
+        description: "This model contains stores data."
+      - name: salesperson
+        description: "This model contains sales person data."
+      - name: employee
+        description: "This model contains employee data."
 
       

@@ -1,13 +1,11 @@
-{{ config(materialized='table') }}
-
-with 
+with
     salesreason as (
-        SELECT
-            salesreasonid as sales_reason_id
+        select
+            cast(salesreasonid as int) as pk_sales_reason
             , name as name
             , reasontype as reason_type
             , cast(modifieddate as datetime) as modified_date
-        FROM {{ source('sap_adw', 'salesreason') }}
+        from {{ source('sap_adw', 'salesreason') }}
     )
 
 select *

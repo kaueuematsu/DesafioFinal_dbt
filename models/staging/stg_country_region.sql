@@ -1,12 +1,10 @@
-{{ config(materialized='table') }}
-
-with 
+with
     countryregion as (
-        SELECT
-            countryregioncode as country_region_code
+        select
+            cast(countryregioncode as varchar) as pk_country_region_code
             , name as name
             , cast(modifieddate as datetime) as modified_date
-        FROM {{ source('sap_adw', 'countryregion') }}
+        from {{ source('sap_adw', 'countryregion') }}
     )
 
 select *

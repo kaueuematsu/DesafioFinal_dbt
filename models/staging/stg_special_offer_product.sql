@@ -1,13 +1,11 @@
-{{ config(materialized='table') }}
-
-with 
+with
     specialofferproduct as (
-        SELECT
-            specialofferid as special_offer_id
-            , productid as product_id
+        select
+            cast(specialofferid as int) as pk_special_offer
+            , cast(productid as int) as fk_product
             , rowguid as rowgu_id
             , cast(modifieddate as datetime) as modified_date
-        FROM {{ source('sap_adw', 'specialofferproduct') }}
+        from {{ source('sap_adw', 'specialofferproduct') }}
     )
 
 select *

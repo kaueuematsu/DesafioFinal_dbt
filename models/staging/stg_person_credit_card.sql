@@ -1,12 +1,10 @@
-{{ config(materialized='table') }}
-
-with 
+with
     personcreditcard as (
-        SELECT
-            businessentityid as business_entity_id
-            , creditcardid as credit_card_id
+        select
+            cast(businessentityid as int) as pk_person_credit_card
+            , cast(creditcardid as int) as fk_credit_card
             , cast(modifieddate as datetime) as modified_date
-        FROM {{ source('sap_adw', 'personcreditcard') }}
+        from {{ source('sap_adw', 'personcreditcard') }}
     )
 
 select *

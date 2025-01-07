@@ -39,9 +39,10 @@ models:
       materialized: view
     staging:
       schema: DESAFIO_LH
+      materialized: table
     marts:
       schema: DESAFIO_LH
-
+      materialized: table
 
 seeds:
   desafio_final: # <-- Name of the project. If you renamed your project you have to change this as well

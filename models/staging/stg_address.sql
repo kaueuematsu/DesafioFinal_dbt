@@ -1,13 +1,11 @@
-{{ config(materialized='table') }}
-
-with 
+with
     address as (
-        SELECT
-            addressid as address_id
+        select
+            cast(addressid as int) as pk_address
             , addressline1 as address_line1
             , addressline2 as address_line2
             , city as city
-            , stateprovinceid as state_province_id
+            , cast(stateprovinceid as int) as fk_state_province
             , postalcode as postalcode
             , spatiallocation as spatial_location
             , rowguid as rowgu_id
