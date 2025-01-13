@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: dim_product
+    columns:
+      - name: sk_product
+        description: "dim_product SK."
+        tests:
+          - unique              
+          - not_null
+      
+      - name: pk_product
+        description: "dim_product PK, with product id"
+        tests:
+          - unique              
+          - not_null
+          
+      - name: product_name
+        description: "Products names."
+
+      - name: category_name
+        description: "Categories."
+
+      - name: subcategory_name
+        description: "Subcategories."

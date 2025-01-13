@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: dim_sales_person
+    columns:
+      - name: sk_sales_person
+        description: "dim_sales person SK."
+        tests:
+          - unique              
+          - not_null
+      
+      - name: id_sales_person
+        description: "Sales person's IDs."
+          
+      - name: job_title
+        description: "Sales person's job titles."
+
+      - name: gender
+        description: "Sales person's genders."
+
+      - name: sales_quota
+        description: "Sale's person's sales quotas."
+
+      - name: sales_ytd
+        description: "Combined sales."
+      
+      - name: sales_last_year
+        description: "Sales from the past year."

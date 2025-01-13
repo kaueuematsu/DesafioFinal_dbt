@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: dim_order
+    columns:
+      - name: sk_sales_order
+        description: "Sales order SK."
+        tests:
+          - unique              
+          - not_null
+
+      - name: id_sales_order
+        description: "Sales reason table FK with orders id."
+        tests:
+          - not_null    
+
+      - name: agg_sales_reason
+        description: "Joined sales reasons."
