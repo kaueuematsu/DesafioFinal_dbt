@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: agg_sales_per_region
+    description: "Provides aggregated sales performance data by territory and country, including total orders and total sales for approved or sent orders."
+    columns:
+      - name: pk_territory
+        description: "Primary key of the territory, uniquely identifying each sales territory."
+
+      - name: pk_sales_order
+        description: "Primary key of the sales order, uniquely identifying each order."
+
+      - name: territory
+        description: "Name of the sales territory associated with the order."
+
+      - name: country
+        description: "Name of the country associated with the sales territory."
+
+      - name: total_orders
+        description: "Total number of distinct sales orders in the given territory and country."
+        
+      - name: total_sales
+        description: "Total revenue generated from the orders in the given territory and country, calculated as the sum of order quantity multiplied by unit price."

@@ -3,26 +3,50 @@ version: 2
 models:
   - name: dim_sales_person
     columns:
-      - name: sk_sales_person
-        description: "dim_sales person SK."
+      - name: pk_sales_person
+        description: "dim_sales person pK."
         tests:
           - unique              
           - not_null
-      
+
       - name: id_sales_person
-        description: "Sales person's IDs."
-          
+        description: "Primary key of the sales_person table, uniquely identifying each salesperson."
+
+      - name: id_person
+        description: "Foreign key referencing the person table, linking salesperson to personal details."
+
+      - name: full_name
+        description: "Full name of the person associated with the salesperson."
+
+      - name: person_type
+        description: "Type of the person, indicating their role or classification."
+
       - name: job_title
-        description: "Sales person's job titles."
+        description: "Job title of the salesperson within the organization."
 
       - name: gender
-        description: "Sales person's genders."
+        description: "Gender of the salesperson."
+
+      - name: vacation_hours
+        description: "Total number of vacation hours accrued by the salesperson."
+
+      - name: sick_hours
+        description: "Total number of sick hours accrued by the salesperson."
 
       - name: sales_quota
-        description: "Sale's person's sales quotas."
+        description: "The sales target or quota assigned to the salesperson."
+
+      - name: bonus
+        description: "Bonus amount received by the salesperson."
+
+      - name: commission_pct
+        description: "Commission percentage earned by the salesperson on their sales."
 
       - name: sales_ytd
-        description: "Combined sales."
-      
+        description: "Total sales made by the salesperson Year-to-Date (YTD)."
+
       - name: sales_last_year
-        description: "Sales from the past year."
+        description: "Total sales made by the salesperson in the previous year."
+        
+      - name: id_territory
+        description: "Identifier of the territory associated with the salesperson."      

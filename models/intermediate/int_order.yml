@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: int_order
+    columns:
+      - name: sk_int_order
+        description: "Int_order SK."
+        tests:
+          - unique              
+          - not_null
+     

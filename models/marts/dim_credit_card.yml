@@ -3,14 +3,14 @@ version: 2
 models:
   - name: dim_credit_card
     columns:
-      - name: sk_credit_card
+      - name: pk_credit_card
         description: "SK of dim_credit_card"
         tests:
           - unique
           - not_null   
 
       - name: id_credit_card
-        description: "Card ID"
+        description: "Creditcard ID"
 
       - name: card_type
-        description: "Card type"
+        description: "Creditcard type"

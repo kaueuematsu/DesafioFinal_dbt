@@ -3,20 +3,8 @@ version: 2
 models:
   - name: dim_customer
     columns:
-      - name: sk_customer
-        description: "Table's SK"
+      - name: pk_customer
+        description: "SK of dim_customer."
         tests:
           - unique
-          - not_null
-
-      - name: pk_customer
-        description: "Customer table PK"
-        tests:          
-          - unique
-          - not_null
-             
-      - name: full_name
-        description: "Customer's full name"
-             
-      - name: store_name
-        description: "Store's name"
+          - not_null   

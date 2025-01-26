@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: dim_purchase_detail
+    columns:
+      - name: pk_purchase_detail
+        description: "PK for the purchase details table."
+        tests:
+          - unique
+          - not_null

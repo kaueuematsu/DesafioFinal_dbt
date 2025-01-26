@@ -3,7 +3,7 @@ version: 2
 sources:
   - name: sap_adw
     description: Data originating from the seeds sent to Snowflake.
-    database: DESAFIO_LH
+    database: DESAFIO_FINAL
     schema: "SAP_ADW"
     tables:
       - name: salesorderheader
@@ -52,5 +52,9 @@ sources:
         description: "This model contains sales person data."
       - name: employee
         description: "This model contains employee data."
+      - name: purchaseorderheader
+        description: "This model contains purchase data"
+      - name: purchaseorderdetail
+        description: "This model contains purchase details."
 
       

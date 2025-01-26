@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: dim_order
+    columns:
+      - name: pk_sales_reason
+        description: "Sales order SK."
+        tests:
+          - unique              
+          - not_null
+
+      - name: id_sales_order
+        description: "Identifier for the sales order associated with the reason."
+
+      - name: id_sales_reason
+        description: "Unique identifier for the reason associated with a sales order."
+        
+      - name: sales_reason
+        description: "Description of the reason linked to the sales order, providing context for its outcome."

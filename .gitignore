@@ -3,5 +3,5 @@ target/
 dbt_packages/
 logs/
 .env
-venv/
+venv-dbt/
 airflow/venv-air/

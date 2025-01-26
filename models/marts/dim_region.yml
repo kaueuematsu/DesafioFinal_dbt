@@ -3,22 +3,20 @@ version: 2
 models:
   - name: dim_region
     columns:
-      - name: sk_ship_to_address
+      - name: sk_region
         description: "SK for the region table."
         tests:
           - unique
           - not_null
 
-      - name: fk_ship_to_address
-        description: "FK for the region table."
-        tests:          
-          - not_null
-             
-      - name: city
-        description: "City name."
+      - name: id_shipment
+        description: "Identifier for the shipment associated with an order, used to link sales to regions."
 
-      - name: state
-        description: "State name."
-        
       - name: country
-        description: "Country name."
+        description: "Name of the country associated with the region."
+
+      - name: state_name
+        description: "Name of the state or province in the region."
+        
+      - name: city
+        description: "Name of the city associated with the region."

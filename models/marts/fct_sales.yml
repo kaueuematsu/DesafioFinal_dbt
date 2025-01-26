@@ -1,0 +1,73 @@
+version: 2
+models:
+  - name: fct_sales
+    description: "Fact sales table with detailed sales information"
+    columns:
+      - name: pk_sales_order
+        description: Table SK
+        tests:
+          - unique
+          - not_null
+
+      - name: id_sale
+        description: "Primary key for the sales fact table, uniquely identifying each sale transaction."
+
+      - name: id_sales_order
+        description: "Identifier for the sales order, linking the transaction to the order dimension."
+
+      - name: id_sales_order_detail
+        description: "Identifier for the sales order detail, providing a granular link to item-level details."
+
+      - name: id_product
+        description: "Foreign key referencing the product dimension."
+
+      - name: id_customer
+        description: "Foreign key referencing the customer dimension."
+
+      - name: id_credit_card
+        description: "Foreign key referencing the credit card used for the transaction."
+
+      - name: id_sales_person
+        description: "Foreign key referencing the salesperson involved in the transaction."
+
+      - name: id_shipment
+        description: "Foreign key referencing the shipment dimension, identifying delivery details."
+
+      - name: id_territory
+        description: "Foreign key referencing the territory dimension, associating the sale with a geographical region."
+
+      - name: order_date
+        description: "Date the order was placed."
+
+      - name: ship_date
+        description: "Date the order was shipped."
+
+      - name: customer_name
+        description: "Name of the customer associated with the transaction."
+
+      - name: person_type
+        description: "Type of customer (e.g., individual or organization)."
+
+      - name: online_order
+        description: "Indicates whether the order was placed online. Values: True/False."
+
+      - name: order_qty
+        description: "Quantity of items ordered in the transaction."
+
+      - name: group_sales_reason
+        description: "Aggregated reasons associated with the sales order, providing contextual insights."
+
+      - name: unit_price
+        description: "Unit price of the product sold in the transaction."
+
+      - name: unit_price_discount
+        description: "Discount applied to the unit price for the transaction."
+
+      - name: net_total
+        description: "Net total for the transaction after discounts, calculated as (unit_price - discount) * order_qty."
+
+      - name: gross_total
+        description: "Gross total for the transaction before discounts, calculated as unit_price * order_qty."
+        
+      - name: store_name
+        description: "Name of the store associated with the transaction, if applicable."

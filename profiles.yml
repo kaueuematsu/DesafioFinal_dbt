@@ -3,13 +3,14 @@ default:
   outputs:
     dev:
       type: snowflake
-      account: fh17794.sa-east-1.aws
-      user: DESAFIOFINALLH                          
-      password: "{{ env_var('DB_PASSWORD') }}"          
+      account: kh69784.sa-east-1.aws
+      user: LHDESAFIOFINAL                          
+      password: "{{ env_var('DBT_PASSWORD') }}"
       warehouse: COMPUTE_WH                 
-      database: DESAFIO_LH                      
-      schema: sap_adw                           
+      database: DESAFIO_FINAL            
+      schema: DESAFIO_FINAL                           
       role: ACCOUNTADMIN                         
       threads: 4                                
       authenticator: snowflake                   
-      
+    
+
