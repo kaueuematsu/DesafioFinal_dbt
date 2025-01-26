@@ -43,9 +43,9 @@ models:
     marts:
       schema: MARTS
       materialized: table
-    # intermediate:
-      # schema: INTERMEDIATE
-      # materialized: table
+    intermediate:
+      schema: INTERMEDIATE
+      materialized: table
 
 seeds:
   desafio_final: # <-- Name of the project. If you renamed your project you have to change this as well

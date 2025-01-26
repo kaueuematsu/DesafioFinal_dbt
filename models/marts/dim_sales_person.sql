@@ -1,6 +1,6 @@
 with
 
-    sales_person as (      -- Definindo a granularidade por aqui. 
+    sales_person as (      
         select
             *
         from {{ref('stg_sales_person')}}

@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: fct_purchase
+    description: "Purchase table for profit calculations"
+    columns:
+      - name: pk_purchase
+        description: Table PK
+        tests:
+          - unique
+          - not_null
